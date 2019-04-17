@@ -5,8 +5,8 @@ const Jimp = require('jimp')
 const fileName = path.join(__dirname, 'original.jpg')
 var qr = new QrCode()
 
-const qrcoderead = async (efeito, nivel) => new Promise(function (resolve) {
-  Jimp.read(fileName)
+const qrcoderead = (efeito, nivel) => new Promise(async function (resolve) {
+  await Jimp.read(fileName)
     .then(image => {
       let log = 'n'
       if (efeito && nivel) { log = efeito + nivel }
@@ -28,7 +28,7 @@ const qrcoderead = async (efeito, nivel) => new Promise(function (resolve) {
 console.log('...')
 console.time('.')
 Promise.race([
-  new Promise((resolve, reject) => setTimeout(reject, 370, 'tempo excedido')),
+  new Promise((resolve, reject) => setTimeout(reject, 380, 'tempo excedido')),
   qrcoderead(),
   qrcoderead('b', 1),
   /*
