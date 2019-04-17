@@ -1,0 +1,13 @@
+{
+  "name": "jsqrteste",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts":{
+    "start" : "node index.js"
+  },
+  "dependencies": {
+    "jimp": "^0.6.1",
+    "qrcode-reader": "^1.0.4"
+  }
+}
